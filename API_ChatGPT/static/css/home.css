@@ -1,0 +1,11 @@
+.boton-flotante {
+  position: fixed; /* Esto permite que el botón se mantenga en su posición incluso al desplazarse por la página */
+  top: 20px; /* Ajusta la distancia desde la parte superior según tus preferencias */
+  right: 20px; /* Ajusta la distancia desde la derecha según tus preferencias */
+  background-color: #007bff; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+}

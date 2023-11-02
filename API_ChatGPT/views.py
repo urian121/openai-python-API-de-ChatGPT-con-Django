@@ -4,4 +4,4 @@ from django.shortcuts import render
 
 
 def inicio(request):
-    pass
+    return render(request, 'index.html')
