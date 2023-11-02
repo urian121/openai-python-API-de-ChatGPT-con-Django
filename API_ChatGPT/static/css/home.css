@@ -9,3 +9,23 @@
   border-radius: 5px; /* Bordes redondeados */
   cursor: pointer; /* Cambia el cursor al pasar por encima */
 }
+
+/* Estilos para el modo claro (cuando "dark-mode" NO está presente en <body>) */
+body:not(.dark-mode) {
+  background-color: #f0eeee;
+  animation-name: hoverTransiton;
+  animation-duration: 0.6s;
+}
+body:not(.dark-mode) textarea {
+  background-color: #f9f9f9;
+}
+
+/* Estilos para el modo oscuro (cuando "dark-mode" SI está presente en <body>) */
+body.dark-mode {
+  background-color: #333;
+  animation-name: hoverTransiton;
+  animation-duration: 0.6s;
+}
+body.dark-mode .textarea {
+  background-color: #d9d4d4;
+}

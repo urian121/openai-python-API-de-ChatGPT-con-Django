@@ -25,28 +25,6 @@
   --chat-bubble-you: var(--colour-primary);
 }
 
-.dark-mode {
-  --bg-page: #1a1a1a;
-  --bg-page-darker: #363636;
-  --bg-page-darkest: #818181;
-  --colour-primary: #1a71d0;
-  --colour-primary-lightest: #202c3a;
-  --colour-primary-darker: #449ffd;
-  --colour-third: #41c590;
-  --colour-third-lighter: #56d6a3;
-  --colour-third-lightest: #272f2c;
-  --colour-text: #c7c7c7;
-  --colour-text-lighter: #868686;
-  --colour-text-darker: #dcdcdc;
-  --colour-text-darkest: #eaeaea;
-  --border-color: #4c4c4c;
-  --search-form-bg-colour: #363636;
-  --send-form-bg-colour: #363636;
-  --send-btn-box-shadow-colour: #44515f;
-  --chat-bubble-me: #363636;
-  --chat-bubble-you: var(--colour-primary);
-}
-
 /* ===================================
     Base
 ====================================== */
@@ -63,7 +41,7 @@ html {
 }
 
 body {
-  background: #f0eeee !important;
+  background: #f0eeee;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Inter", sans-serif;
@@ -96,24 +74,7 @@ body {
     font-size: 1.5rem;
   }
 }
-.messages-page__dark-mode-toogler {
-  width: 2.6rem;
-  height: 2.6rem;
-  padding: 0.35rem;
-  border-radius: 50%;
-  border: 1px solid var(--border-color);
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.messages-page__dark-mode-toogler:hover {
-  background-color: var(--colour-primary);
-  border-color: var(--colour-primary);
-}
-.messages-page__dark-mode-toogler:hover path {
-  fill: var(--bg-page-darker);
-}
+
 .messages-page__list {
   list-style: none;
   flex-grow: 1;
@@ -549,10 +510,6 @@ body {
   background-color: var(--colour-text-lighter);
   border-radius: 50%;
 }
-.chat-member__status {
-  color: var(--colour-text-lighter);
-  font-size: 0.8rem;
-}
 .chat__profile {
   width: 100%;
   height: 100%;
@@ -750,11 +707,4 @@ body {
 }
 .svg-icon--previous {
   width: 55%;
-}
-.svg-icon--dark-mode {
-  width: 80%;
-}
-.svg-icon--dark-mode path,
-.svg-icon--dark-mode circle {
-  fill: var(--colour-primary);
 }

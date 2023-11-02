@@ -107,7 +107,17 @@
         python manage.py runserver
         Revisar la consola y visitar la URL http://127.0.0.1:8000
 
-15. Crear el archivo urls.py en la aplicación (bd_django_mysql)
+
+15. Conectar las URLS de mi aplicación con el projecto, para esto vamos al archivo uls.py del projecto
+    from django.urls import path, include
+
+        urlpatterns = [
+                path('admin/', admin.site.urls),
+                path("", include('empleados.urls'))
+        ]
+
+
+16. Crear el archivo urls.py en la aplicación (bd_django_mysql)
 
         from django.urls import path
         from . import views
@@ -119,24 +129,6 @@
                         path('empleados/', views.listar_empleados, name='listar_empleados'),
                 ]
 
-16. Conectar las URLS de mi aplicación con el projecto, para esto vamos al archivo uls.py del projecto
-    from django.urls import path, include
-
-        urlpatterns = [
-                path('admin/', admin.site.urls),
-                path("", include('empleados.urls'))
-        ]
-
-17. Crear la carpeta 'templates' dentro de la aplicación donde estarán mis archivos.html
-
-18. Crear la carpeta 'static' dentro de mi aplicacion, aqui estaran archivos
-    estaticos (css, js, imagenes, etc..)
-
-19. Crear la carpeta media, para almacenar las imagenes del empleado
-
-20. Correr archivo requirement.txt
-
-        pip install -r requirements.txt
 
 21. Crear el archivo requirements.txt para tener todos los paquetes del proyecto a la mano
 
@@ -144,6 +136,13 @@
 
         Nota: para instalar los paquetes solo basta ejecutar
         pip install -r requirements.txt
+
+        
+20. Correr archivo requirement.txt
+
+        pip install -r requirements.txt
+
+
 
 #### Resultado final
 
