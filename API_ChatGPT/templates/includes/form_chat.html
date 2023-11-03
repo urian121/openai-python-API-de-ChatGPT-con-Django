@@ -1,18 +1,15 @@
-<form
-  id="formulario_chat"
-  name="formulario_chat"
-  method="POST"
-  autocomplete="off"
-  enctype="multipart/form-data">
+<form id="form_ChatGPT" name="form_ChatGPT" method="POST" autocomplete="off">
+  {% csrf_token %}
   <div class="chat__send-container px-2 px-md-3 pt-1 pt-md-3">
     <div class="custom-form__send-wrapper">
+      <input type="text" name="usuario" value="1" hidden />
       <textarea
         class="form-control custom-form"
-        name=""
+        name="pregunta"
         rows="1"
         autofocus></textarea>
 
-      <button type="submit" class="custom-form__send-submit">
+      <button type="submit" class="custom-form__send-submit" id="enviar-button">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="svg-icon svg-icon--send"

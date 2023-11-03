@@ -20,16 +20,13 @@
   <body>
     {% include 'includes/loader.html' %}
 
-    <button class="btn-toggle boton-flotante">
-      <i class="bi bi-moon"></i>
-    </button>
-
     <div class="home-page__content messages-page">
       <div class="container-fluid h-100">
         <div class="row px-0 h-100">
-          <div class="chat col-12 col-md-8 col-lg-7 col-xl-6 px-0 pl-md-1">
+          <div class="col-md-3"><h2>hola</h2></div>
+          <div class="chat col-12 col-md-8">
             <div class="chat__container">
-              <div class="chat__wrapper py-2 pt-mb-2 pb-md-3">
+              <div class="chat__wrapper pt-mb-2 pb-md-3">
                 {% include 'includes/perfil.html' %}
                 <div class="chat__content pt-4 px-3">
                   {% include 'mensajes_chat.html' %}
@@ -45,7 +42,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
-    <script src="{% static 'js/modeDark.js' %}"></script>
+    <script src="{% static 'js/home.js' %}"></script>
 
     <script>
       window.addEventListener("load", (event) => {
@@ -56,6 +53,35 @@
             loader.style.display = "none";
           }, 500);
         }, 500);
+      });
+
+      const form = document.querySelector("#form_ChatGPT");
+      const enviarButton = document.querySelector("#enviar-button");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        const mensaje = form.querySelector("textarea").value;
+        try {
+          const response = await axios({
+            method: "post",
+            url: "/enviar-solicitud-a-chat-gpt/",
+            data: formData,
+            headers: { "X-CSRFToken": formData.get("csrfmiddlewaretoken") },
+          });
+
+          console.log("Respuesta del servidor:", response.data);
+          if (response.status == 200) {
+            console.log("OK");
+            form.reset();
+          } else {
+            console.log("Error, no se proceso la solicitud");
+          }
+        } catch (error) {
+          console.error("Error al enviar la solicitud:", error);
+        }
       });
     </script>
   </body>

@@ -1,23 +1,17 @@
 {% load static %}
-<div
-  class="chat__messaging messaging-member--online pb-2 pb-md-2 pl-2 pl-md-4 pr-2">
+<div class="chat__messaging pb-2 pb-md-2 pl-2 pl-md-4 pr-2">
   <div class="chat__infos pl-2 pl-md-0">
     <div class="chat-member__wrapper" data-online="true">
       <div class="chat-member__avatar">
         <img
-          src="{% static 'imgs/urian-viera.jpg' %}"
+          src="{% static 'imgs/chatgpt-logo-chagpt.png' %}"
           alt="Urian Viera"
           loading="lazy" />
-        <div class="user-status user-status--large"></div>
       </div>
+      <h2 class="titulo">CHAT GTP</h2>
       <div class="chat-member__details">
         <span class="chat-member__name">
-          Chat GTP - Urian Viera
           <i class="bi bi-robot"></i>
-          <img
-            style="width: 80px"
-            src="{% static 'imgs/chatgpt-logo-chagpt.jpg' %}"
-            alt="logo" />
         </span>
       </div>
     </div>
